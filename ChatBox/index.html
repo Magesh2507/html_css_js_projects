@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>whatsapp</title>
+    <link rel="stylesheet" href="styles/whatsapp.css">
+    <!-- <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">    
+        <div class="left">
+            <div class="chatBox">
+                <div class="header">
+                    <div class="profilePhoto" id ="sender-pp">
+                        <img src="images/pc.jpg" alt="photo">
+                    </div>
+                    <div class="userName">
+                        <h3>Sakthi Jeyan</h3>
+                        <span id="sender" class="typing-info"><i>typing...</i></span>
+                    </div>
+                    <div class="call">                
+                        <span class="video"><i class="fa-solid fa-video"></i></span>
+                        <span class="audio"><i class="fa-solid fa-phone"></i></span>
+                    </div>
+                </div>
+                <div class="sender-inbox" id="sender-inbox">
+                    <div class="img-sender">
+                        <!-- <img src="images/pc.jpg"> -->
+                    </div>                    
+                </div>
+                <div class="message-send-container">
+                    <div class="input-container">
+                        <input type="text" id="sender-input">
+                    </div>
+                    <div class="send-icon-container" id="senderId" onclick="send(this)">
+                        <span class="send-icon" id="send" ><i class="fa-regular fa-paper-plane"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="chatBox">
+                <div class="header">
+                    <div class="profilePhoto">
+                        <img src="images/sj.jpg" alt="photo">
+                    </div>
+                    <div class="userName">
+                        <h3>Jeyan Sakthi</h3>
+                        <span id="receiver" class="typing-info"><i>typing...</i></span>
+                    </div>
+                    <div class="call">                
+                        <span class="video"><i class="fa-solid fa-video"></i></span>
+                        <span class="audio"><i class="fa-solid fa-phone"></i></span>
+                    </div>
+                </div>
+                <div class="receiver-inbox" id="receiver-inbox">
+                    <div class="img-receiver">
+                        <!-- <img src="images/sj.jpg"> -->
+                    </div>                    
+                </div>
+                <div class="message-send-container">
+                    <div class="input-container">
+                        <input type="text" id="receiver-input">
+                    </div>
+                    <div class="send-icon-container" id="receiverId" onclick="send(this)">
+                        <span class="send-icon" id="send" ><i class="fa-regular fa-paper-plane"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+<script  src="scripts/whatsapp.js"></script>
+
+</body>
+</html>
