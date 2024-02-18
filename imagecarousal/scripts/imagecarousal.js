@@ -1,62 +1,37 @@
-const pic = document.querySelector('.pic')
-const pics = document.querySelectorAll('.pics')
-const prev = document.getElementById('pre')
-const next = document.getElementById('next')
+const pics = document.querySelectorAll('.pics');
+const prev = document.getElementById('pre');
+const nextBtn = document.getElementById('next');
+let count = 0;
 
-	let count = 0;
-	next.addEventListener('click', good)
-	prev.addEventListener('click', pre)
-	const myInterval = setInterval(good, 2000)
+nextBtn.addEventListener('click', next);
+prev.addEventListener('click', pre);
 
-function good(){
-	count++
-	pics.forEach((picse,idx) => {
-	
-		if(count < pics.length) {
+const myInterval = setInterval(next, 3000);
 
-			if(count == idx){
-				deSelect()
-			picse.classList.add('active')
-			}
-			
-		}
-
-		else{
-			count--
-			clearInterval(myInterval)
-			const rev = setInterval(pre, 2000)
-		}
-	})
+function next() {
+	count++;
+	showImage();
 }
 
-
-function deSelect(){
-	pics.forEach((picse,idx) => {
-		picse.classList.remove('active')
-	})
+function pre() {
+	count--;
+	showImage();
 }
 
-function pre(){
-	count--
+function showImage() {
+	if (count >= pics.length) {
+		count = 0;
+	} else if (count < 0) {
+		count = pics.length - 1;
+	}
 
-	pics.forEach((picse,idx) => {
+	deSelect();
+	pics[count].classList.add('active');
+}
 
-		if(count >= 0) {
-
-			if(count == idx){
-				deSelect()
-			picse.classList.add('active')
-			}
-
-			else{
-			picse.classList.remove('active')
-			}
-		}
-
-		else{
-			count++
-			clearInterval(myInterval)
-		}
-	})
+function deSelect() {
+	pics.forEach(pic => {
+		pic.classList.remove('active');
+	});
 }
 
