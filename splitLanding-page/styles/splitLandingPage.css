@@ -24,7 +24,7 @@ h1{
   color: white;
   position: absolute;
   white-space: nowrap;
-  left: 44%;
+  left: 50%;
   top: 30%;
   transform: translateX(-50%);
 }
@@ -41,7 +41,7 @@ h1{
   width: 150px;
   height: 50px;
   top: 50%;
-  left: 40%;
+  left: 48%;
   transform: translateX(-50px);
   font-weight: bold;
   text-transform: uppercase;  
