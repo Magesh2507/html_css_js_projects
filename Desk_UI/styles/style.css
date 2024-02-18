@@ -399,6 +399,7 @@ body {
 
 .fa-pause {
     font-size: var(--font-size-x-small);
+    transform : translateY(-1px);
 }
 
 .fa-caret-right {
