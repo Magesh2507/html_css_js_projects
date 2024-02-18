@@ -63,6 +63,20 @@ h1{
   height: 100%;
   background: #333;
 }
+.text-left, .text-right{
+  position: absolute;
+  top: 5%;
+  color:white;
+  z-index: 1;
+  font-size: larger;
+}
+.text-left{
+  left: 2%;
+}
+
+.text-right{
+  right: 2%;
+}
 
 .ct{
   position: absolute;
