@@ -1,5 +1,5 @@
 const quizdata = [
-	{
+    {
         question: "Which language runs in a web browser?",
         a: "Java",
         b: "C",
@@ -32,62 +32,70 @@ const quizdata = [
         correct: "b",
     },];
 
- const container = document.querySelector('.container')
- const questin = document.getElementById('ques')
- const options = document.querySelectorAll('.optns')
- const a_text = document.getElementById('a_text')
- const b_text = document.getElementById('b_text')
- const c_text = document.getElementById('c_text')
- const d_text = document.getElementById('d_text')
- const submit = document.getElementById('submit')
- 
-  let currentQuiz = 0;
-  let score = 0;
+const container = document.querySelector('.container')
+const questin = document.getElementById('ques')
+const options = document.querySelectorAll('.optns')
+const a_text = document.getElementById('a_text')
+const b_text = document.getElementById('b_text')
+const c_text = document.getElementById('c_text')
+const d_text = document.getElementById('d_text')
+const submit = document.getElementById('submit')
 
- loadQuiz()
+let currentQuiz = 0;
+let score = 0;
+let choosed = false;
 
- function loadQuiz() {
- 		deselected()
+loadQuiz()
 
- 	const currentQuizData = quizdata[currentQuiz]
- 		questin.innerText = currentQuizData.question
- 		a_text.innerText = currentQuizData.a
- 		b_text.innerText = currentQuizData.b
- 		c_text.innerText = currentQuizData.c
- 		d_text.innerText = currentQuizData.d
- }
+function loadQuiz() {
+    deselected()
 
- function deselected(){
- 	options.forEach(option => option.checked = false)
- }
+    const currentQuizData = quizdata[currentQuiz]
+    questin.innerText = currentQuizData.question
+    a_text.innerText = currentQuizData.a
+    b_text.innerText = currentQuizData.b
+    c_text.innerText = currentQuizData.c
+    d_text.innerText = currentQuizData.d
+}
 
- function getselected(){
- 	//let answer
- 	options.forEach(option => {
- 		if(option.checked){
- 			answer = option.id
- 		}
- 	})
- 		return answer
- }
+function deselected() {
+    options.forEach(option => option.checked = false)
+}
+
+function getselected() {
+    //let answer
+    options.forEach(option => {
+        if (option.checked) {
+            answer = option.id;
+            choosed = true;
+        }
+    })
+    if (choosed) {
+        return answer
+    }
+    else {
+        alert("choose any one")
+    }
+}
 
 
- submit.addEventListener('click', () => {
+submit.addEventListener('click', () => {
     const answer = getselected()
-    
- 	if(answer){
- 		if(answer === quizdata[currentQuiz].correct){
- 			score++
- 		}
-        
+
+    if (choosed) {
+        if (answer === quizdata[currentQuiz].correct) {
+            score++
+        }
+
         currentQuiz++
 
- 		if(currentQuiz < quizdata.length){
- 			loadQuiz()
- 		}
- 		else{
- 			container.innerHTML = `<h1> Your score ${score}/${quizdata.length}
+        if (currentQuiz < quizdata.length) {
+            loadQuiz()
+            choosed = false;
+        }
+        else {
+            container.innerHTML = `<h1> Your score ${score}/${quizdata.length}
  			<button onClick="location.reload()">Reload</button>`
- 		}
- 	}
- })
+        }
+    }
+})
