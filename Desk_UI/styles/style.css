@@ -157,9 +157,10 @@ body {
 .info-div {
     max-width: 350px;
     width: 330px;
-    transition: all 0.3s linear;
+    transition: all 0.5s linear;
     gap: 10px;
     overflow: hidden;
+    white-space: nowrap;
     background-color: var(--whiteshade-bg-color);
 }
 
