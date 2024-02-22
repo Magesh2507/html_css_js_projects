@@ -157,7 +157,7 @@ body {
 .info-div {
     max-width: 350px;
     width: 330px;
-    transition: all 0.5s linear;
+    transition: all 0.4s ease-in-out;
     gap: 10px;
     overflow: hidden;
     white-space: nowrap;
