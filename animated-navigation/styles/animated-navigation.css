@@ -37,11 +37,14 @@ body{
 	flex: 3;
 	align-items: center;
 	position: relative;
+	overflow: hidden;
 }
 
 ul{
 	list-style-type: none;
 	color: darkmagenta;
+	overflow: hidden;
+    	text-wrap: nowrap;
 }
 
 li{
